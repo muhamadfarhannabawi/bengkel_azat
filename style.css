@@ -1,0 +1,267 @@
+/* ======================
+   RESET
+====================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(180deg,#0e0e0e,#1a1a1a);
+  color:#eaeaea;
+  line-height:1.6;
+}
+
+/* ======================
+   NAVBAR
+====================== */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.95);
+  backdrop-filter:blur(8px);
+  z-index:999;
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  color:#ff2e2e;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav ul li a{
+  color:#eee;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+nav ul li a:hover{
+  color:#ff2e2e;
+}
+
+/* ======================
+   HAMBURGER MENU
+====================== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+/* TAMBAHAN: WARNA KUNING */
+.hamburger span{
+  height:3px;
+  width:26px;
+  background:#ffcc00; /* KUNING */
+  margin:4px 0;
+  border-radius:4px;
+  transition:0.3s;
+}
+
+/* TAMBAHAN: EFEK HOVER */
+.hamburger:hover span{
+  background:#ffe066;
+}
+
+/* ======================
+   HERO
+====================== */
+header{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+header h1{
+  font-size:54px;
+  color:#ff2e2e;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+header p{
+  margin:15px 0 30px;
+  color:#ddd;
+  font-size:18px;
+}
+
+/* BUTTON */
+.cta{
+  background:linear-gradient(135deg,#ff2e2e,#b30000);
+  padding:15px 40px;
+  border-radius:40px;
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(255,46,46,.5);
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:translateY(-4px);
+}
+
+/* ======================
+   SECTION
+====================== */
+section{
+  padding:120px 10% 80px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:36px;
+}
+
+.section-title span{
+  color:#ff2e2e;
+}
+
+/* ======================
+   ABOUT
+====================== */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,.7);
+}
+
+/* ======================
+   CARDS
+====================== */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:linear-gradient(160deg,#1b1b1b,#111);
+  padding:35px 25px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.7);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 30px 60px rgba(255,46,46,.4);
+}
+
+.card i{
+  font-size:42px;
+  color:#ff2e2e;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#ff2e2e;
+}
+
+/* ======================
+   CONTACT
+====================== */
+.contact-box{
+  max-width:900px;
+  margin:auto;
+}
+
+/* TAMBAHAN: LINK WA KELIHATAN */
+.contact-box a{
+  color:#25D366;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.contact-box a:hover{
+  text-decoration:underline;
+}
+
+/* ======================
+   FOOTER
+====================== */
+footer{
+  background:#000;
+  text-align:center;
+  padding:25px;
+  margin-top:80px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media(max-width:900px){
+  nav ul{
+    display:none;
+    position:absolute;
+    top:65px;
+    right:20px;
+    flex-direction:column;
+    background:#111;
+    width:220px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.7);
+  }
+
+  nav ul.show{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  header h1{
+    font-size:38px;
+  }
+}

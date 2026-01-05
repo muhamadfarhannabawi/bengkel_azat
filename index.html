@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bengkel Motor Azat | Servis & Perbaikan</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS KAMU -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Bengkel Motor Azat</div>
+    <ul id="navMenu">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#services">Layanan</a></li>
+      <li><a href="#hours">Jam</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<header id="home">
+  <h1>Bengkel Motor Azat</h1>
+  <p>Servis Cepat • Harga Jujur • Mekanik Berpengalaman</p>
+  <a href="#contact" class="cta">Datang Sekarang</a>
+</header>
+
+<section id="about">
+  <div class="section-title">
+    <h2>Tentang <span>Kami</span></h2>
+  </div>
+  <div class="about">
+    <div>
+      <p><strong>Bengkel Motor Azat</strong> melayani servis dan perbaikan sepeda motor
+      dengan teknisi berpengalaman dan harga transparan.</p>
+      <p>Servis ringan hingga berat, motor harian & touring.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Layanan <span>Kami</span></h2>
+  </div>
+
+  <div class="features">
+    <div class="card">
+      <i class="fa-solid fa-oil-can"></i>
+      <h3>Servis Rutin</h3>
+      <p>Ganti oli, tune up, cek mesin</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-gear"></i>
+      <h3>Perbaikan Mesin</h3>
+      <p>Mesin kasar & turun mesin</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-bolt"></i>
+      <h3>Kelistrikan</h3>
+      <p>Aki, starter, lampu</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-motorcycle"></i>
+      <h3>Ban & Rem</h3>
+      <p>Ganti ban & kampas rem</p>
+    </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="section-title">
+    <h2>Status & <span>Jam Operasional</span></h2>
+  </div>
+
+  <div class="features">
+    <div class="card">
+      <h3>Status Bengkel</h3>
+      <p id="statusText">Memuat...</p>
+      <small id="statusNote"></small>
+    </div>
+
+    <div class="card">
+      <h3>Jam Buka</h3>
+      <p><strong>Setiap Hari<br>09.00 – 20.00 WIB</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Kontak <span>Kami</span></h2>
+  </div>
+
+  <div class="contact-box">
+    <div class="card">
+      <p>
+        <a href="https://wa.me/628811205935" target="_blank" style="color:#25D366;font-weight:600;text-decoration:none">
+          <i class="fa-brands fa-whatsapp"></i> 0881-1205-935
+          
+        </a>
+        <br><br>
+
+        <a href="https://maps.app.goo.gl/7dtjSpQVwPrdhvFP7"
+   target="_blank"
+   style="color:#ffcc00;text-decoration:none;font-weight:600">
+  <i class="fa-solid fa-location-dot"></i>
+  Kp. Baru Tari Kolot RT 001/003<br>
+  Kel. Sepatan, Kec. Sepatan<br>
+  Kab. Tangerang, Banten
+</a>
+
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <p>© 2026 Bengkel Motor Azat • Servis Jujur & Terpercaya</p>
+</footer>
+
+<script>
+function formatJam(jam){
+  return jam.toFixed(2).replace('.', ':');
+}
+
+function updateStatus(){
+  const now = new Date();
+  const hour = now.getHours() + now.getMinutes() / 60;
+  const open = 9.00, close = 20.00;
+
+  const statusText = document.getElementById('statusText');
+  const statusNote = document.getElementById('statusNote');
+
+  if(hour >= open && hour < close){
+    statusText.innerHTML = '🟢 Bengkel Buka';
+    statusText.style.color = '#2e7d32';
+    statusNote.innerHTML = 'Tutup pukul ' + formatJam(close);
+  } else {
+    statusText.innerHTML = '🔴 Bengkel Tutup';
+    statusText.style.color = '#c62828';
+    statusNote.innerHTML = 'Buka pukul ' + formatJam(open);
+  }
+}
+updateStatus();
+setInterval(updateStatus, 60000);
+
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
